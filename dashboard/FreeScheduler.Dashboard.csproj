@@ -9,7 +9,7 @@
         <Description>FreeScheduler非官方监控面板</Description>
         <PackageProjectUrl>https://github.com/li-zheng-hao/FreeScheduler.Dashboard.git</PackageProjectUrl>
         <RepositoryUrl>https://github.com/li-zheng-hao/FreeScheduler.Dashboard.git</RepositoryUrl>
-        <PackageVersion>1.0.2</PackageVersion>
+        <PackageVersion>1.0.3</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,7 +17,7 @@
       <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
       <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
-      <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="7.0.0-preview.6.22330.3" />
+      <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.8" />
     </ItemGroup>
     <PropertyGroup>
         <EnableDefaultContentItems>false</EnableDefaultContentItems>

@@ -30,7 +30,7 @@ public class TaskController : ControllerBase
     public async Task<dynamic> PageQueryTask([FromQuery] PageQueryParam param)
     {
         var page = _fsql.Select<dynamic>()
-            .WithSql($"select * from {FreeSchedulerDashboardMiddlewareExtensions.option.TaskTableName} ")
+            .WithSql($"select * from {SchedulerDashBoardOption.Instance.TaskTableName} ")
             .WhereIf(string.IsNullOrWhiteSpace(param.filterKey) == false, " topic like @key",
                 new { key = $"{param.filterKey}%" });
         var count = await page.CountAsync();
@@ -48,7 +48,7 @@ public class TaskController : ControllerBase
     public async Task<dynamic> PageQueryTaskLog([FromQuery] TaskLogQueryParam param)
     {
         var page = _fsql.Select<dynamic>()
-            .WithSql($"select * from {FreeSchedulerDashboardMiddlewareExtensions.option.TaskLogTableName} ")
+            .WithSql($"select * from {SchedulerDashBoardOption.Instance.TaskLogTableName} ")
             .WhereIf(param.success!=-1, " success = @success ",
                 new { success=param.success})
             .WhereIf(string.IsNullOrWhiteSpace(param.filterKey)==false," task_id=@id",new{id=param.filterKey})
@@ -74,7 +74,7 @@ public class TaskController : ControllerBase
             1 => "Paused",
             2 => "Completed"
         };
-        var rows = await _fsql.Update<dynamic>().AsTable(FreeSchedulerDashboardMiddlewareExtensions.option.TaskTableName)
+        var rows = await _fsql.Update<dynamic>().AsTable(SchedulerDashBoardOption.Instance.TaskTableName)
             .SetRaw("status = @status", new {status })
             .Where("id=@task_id", new { param.task_id })
             .ExecuteAffrowsAsync();
