@@ -1,9 +1,9 @@
 using System.Runtime.CompilerServices;
-using AspNetCore.StartupTemplate.FreeSchedulerDashboard.Model;
+using FreeScheduler.Dashboard.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace AspNetCore.StartupTemplate.FreeSchedulerDashboard;
+namespace FreeScheduler.Dashboard;
 
 /// <summary>
 /// FreeScheduler处理接口
@@ -47,7 +47,7 @@ public class TaskController : ControllerBase
     [HttpGet]
     public async Task<dynamic> PageQueryTaskLog([FromQuery] TaskLogQueryParam param)
     {
-        var page = _fsql.Select<object>()
+        var page = _fsql.Select<dynamic>()
             .WithSql($"select * from {FreeSchedulerDashboardMiddlewareExtensions.option.TaskLogTableName} ")
             .WhereIf(param.success!=-1, " success = @success ",
                 new { success=param.success})
@@ -56,7 +56,7 @@ public class TaskController : ControllerBase
         var count = await page.CountAsync();
 
         var rows = await page.OrderBy("create_time desc")
-            .ToListAsync<object>("*");
+            .ToListAsync<dynamic>("*");
         return new { rows, count };
     }
 

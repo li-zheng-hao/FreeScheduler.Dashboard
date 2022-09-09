@@ -1,4 +1,4 @@
-namespace AspNetCore.StartupTemplate.FreeSchedulerDashboard.Model;
+namespace FreeScheduler.Dashboard.Model;
 
 public class UpdateTaskParam
 {

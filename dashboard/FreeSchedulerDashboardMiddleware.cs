@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileProviders;
 
-namespace AspNetCore.StartupTemplate.FreeSchedulerDashboard;
+namespace FreeScheduler.Dashboard;
 
 public class UseFreeSchedulerDashboard
 {
@@ -54,8 +54,8 @@ public static class FreeSchedulerDashboardMiddlewareExtensions
         var dir = Path.GetDirectoryName(typeof(TaskController).Assembly.Location);
         builder.UseStaticFiles(new StaticFileOptions()
         {
-            FileProvider = new PhysicalFileProvider(Path.Combine(dir, "dashboard")),
-            // FileProvider = new EmbeddedFileProvider(typeof(UseFreeSchedulerDashboard).Assembly,"AspNetCore.StartupTemplate.FreeSchedulerDashboard.dashboard"), 
+            // FileProvider = new PhysicalFileProvider(Path.Combine(dir, "dashboard")),
+            FileProvider = new EmbeddedFileProvider(typeof(UseFreeSchedulerDashboard).Assembly,"FreeScheduler.Dashboard.dashboard"), 
             RequestPath = "/schedulerdashboard"
         });
         return builder;

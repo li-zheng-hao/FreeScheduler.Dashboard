@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>FreeScheduler.Dashboard</Title>
+        <Description>FreeScheduler非官方监控面板</Description>
+        <PackageProjectUrl>https://github.com/li-zheng-hao/FreeScheduler.Dashboard.git</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/li-zheng-hao/FreeScheduler.Dashboard.git</RepositoryUrl>
+        <PackageVersion>1.0.1</PackageVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FreeSql" Version="3.2.666" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+      <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="7.0.0-preview.6.22330.3" />
+    </ItemGroup>
+    <PropertyGroup>
+        <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\AspNetCore.StartupTemplate.FreeSchedulerDashboard.xml</DocumentationFile>
+    </PropertyGroup>
+<!--    <ItemGroup>-->
+<!--        <Content Include="dashboard/**">-->
+<!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+<!--        </Content>-->
+<!--    </ItemGroup>-->
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.FileProviders.Physical">
+        <HintPath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\6.0.6\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="dashboard\assets\Admin.6bb36a1e.css">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="dashboard\assets\Admin.25a2dc17.js">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="dashboard\assets\index.13a587ad.js">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="dashboard\assets\index.37ed33e3.css">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="dashboard\index.html">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="dashboard\vite.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+    
+
+
+</Project>
