@@ -16,7 +16,7 @@ app.UseFreeSchedulerDashboard(it =>
     // it.TaskLogTableName // 日志表名 默认FreeScheduler_tasklog
 });
 
-// .NET 6 MinimalApi需要加这一句
+// .NET 6 MinimalApi 必须加这一句重新匹配endpoint
 app.UseRouting();
 
 app.MapControllers();
@@ -35,3 +35,4 @@ app.MapControllers();
 1. 使用的.NET 6版本编译的，其它低版本目前需要自己修改代码集成
 2. 使用http访问如果存在https重定向需自行修改跨域配置，使用https访问则无此问题
 3. 权限访问方面，可自行继承`IDashboardAuthorizationFilter`接口，根据返回值来决定是否有权限访问页面
+4. .NET 6 必须加`app.UseRouting()`这一句重新匹配Endpoint，因为在管道内部修改了请求的url，因此一进来匹配不到相应的Endpoint
