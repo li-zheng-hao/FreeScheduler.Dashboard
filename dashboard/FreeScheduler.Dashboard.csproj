@@ -9,7 +9,7 @@
         <Description>FreeScheduler非官方监控面板</Description>
         <PackageProjectUrl>https://github.com/li-zheng-hao/FreeScheduler.Dashboard.git</PackageProjectUrl>
         <RepositoryUrl>https://github.com/li-zheng-hao/FreeScheduler.Dashboard.git</RepositoryUrl>
-        <PackageVersion>1.0.1</PackageVersion>
+        <PackageVersion>1.0.2</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -36,21 +36,27 @@
       </Reference>
     </ItemGroup>
     <ItemGroup>
+      <None Remove="dashboard\assets\Admin.6bb36a1e.css" />
       <EmbeddedResource Include="dashboard\assets\Admin.6bb36a1e.css">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
-      <EmbeddedResource Include="dashboard\assets\Admin.25a2dc17.js">
+      <None Remove="dashboard\assets\Admin.27c80e77.js" />
+      <EmbeddedResource Include="dashboard\assets\Admin.27c80e77.js">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
-      <EmbeddedResource Include="dashboard\assets\index.13a587ad.js">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </EmbeddedResource>
+      <None Remove="dashboard\assets\index.37ed33e3.css" />
       <EmbeddedResource Include="dashboard\assets\index.37ed33e3.css">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
+      <None Remove="dashboard\assets\index.ee620ab4.js" />
+      <EmbeddedResource Include="dashboard\assets\index.ee620ab4.js">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="dashboard\index.html" />
       <EmbeddedResource Include="dashboard\index.html">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
+      <None Remove="dashboard\vite.svg" />
       <EmbeddedResource Include="dashboard\vite.svg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>

@@ -82,6 +82,8 @@ const searchClick = async (needOrder: boolean = false) => {
       item.create_time = convertUTCDateToLocalDate(new Date(item.create_time)).toLocaleString();
       item.last_run_time = convertUTCDateToLocalDate(new Date(item.last_run_time)).toLocaleString();
       item.isEnabled = item.status === 'Running';
+      if (JSON.stringify(item.exception) === '{}') { item.exception = '' }
+      if (JSON.stringify(item.remark) === '{}') { item.remark = '' }
     });
     console.log(res.rows)
     tableData.value = res.rows
