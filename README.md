@@ -1,5 +1,5 @@
 # FreeScheduler.Dashboard
-Freescheduler监控面板
+Freescheduler自用的一个监控面板，简单用Vue3+TypeScript+Vite+ElementPlus写的，支持权限校验，官方地址：[FreeScheduler](https://github.com/2881099/FreeScheduler)
 
 # 使用方式
 
@@ -21,7 +21,7 @@ app.UseRouting().UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
-// .NET 6 把下面这行换成上面的
+// .NET 6 把下面这行换成上面的 其它版本未测试
 // app.MapControllers();
 ```
 
