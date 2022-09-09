@@ -3,9 +3,13 @@ Freescheduler监控面板
 
 # 使用方式
 
+
+```sh
+Install-Package FreeScheduler.Dashboard # 安装nuget包
+```
+
 ```c#
 app.UseFreeSchedulerDashboard();
-
 
 
 app.UseRouting().UseEndpoints(endpoints =>
