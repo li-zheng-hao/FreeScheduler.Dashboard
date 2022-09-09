@@ -16,13 +16,10 @@ app.UseFreeSchedulerDashboard(it =>
     // it.TaskLogTableName // 日志表名 默认FreeScheduler_tasklog
 });
 
+// .NET 6 MinimalApi需要加这一句
+app.UseRouting();
 
-app.UseRouting().UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
-// .NET 6 把下面这行换成上面的 其它版本未测试
-// app.MapControllers();
+app.MapControllers();
 ```
 
 打开`http://ip地址:端口号/schedulerdashboard/index.html`即可访问到监控面板
